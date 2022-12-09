@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import javax.annotation.PostConstruct;
 import java.util.List;
 
@@ -28,9 +29,11 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     public int process(List<Update> updates) {
         updates.forEach(update -> {
             logger.info("Processing update: {}", update);
-            // Process your updates here
+            // Process your updates here (Обрабатывайте свои обновления здесь)
+
         });
         return UpdatesListener.CONFIRMED_UPDATES_ALL;
     }
+
 
 }
