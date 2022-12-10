@@ -1,11 +1,5 @@
 package pro.sky.telegrambot.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-
-import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -18,9 +12,45 @@ public class Notification_task {
     private Long id;
 
     final int RECONNECT_PAUSE = 10_000;
-private String task;
+
+    public Notification_task(Long id, String task, LocalDateTime data, LocalDateTime time) {
+        this.id = id;
+        this.task = task;
+        this.data = data;
+        this.time = time;
+    }
+
+    private String task;
 private LocalDateTime data;
 private LocalDateTime time;
+
+    public Notification_task() {
+
+    }
+
+    public String getTask() {
+        return task;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
 
     public Long getId() {
         return id;
