@@ -1,11 +1,10 @@
 -- liquibase formatted sql
 
 -- changeset safiulina:1
-
-CREATE TABLE bot(
-    id SERIAL,
-    task TEXT,
-    data DATE,
-    time TIME,
-
-)
+CREATE TABLE if not exists notification_task (
+                                                 id SERIAL,
+                                                 chat_id SERIAL NOT NULL,
+                                                 message_content TEXT NOT NULL,
+                                                 time_stamp TIMESTAMP NOT NULL,
+                                                 sent_message BOOLEAN NOT NULL DEFAULT FALSE
+);
